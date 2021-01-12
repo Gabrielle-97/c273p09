@@ -20,6 +20,7 @@ mysqli_close($link);
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/showCountryObese.js" type="text/javascript"></script>
 
+
     </head>
 
     <body>

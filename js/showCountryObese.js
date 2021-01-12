@@ -1,23 +1,22 @@
 $(document).ready(function () {
-
     $("#idCountry").change(function () {
         var idCountry = $("#idCountry").val();
-
         $.ajax({
             type: "GET",
             url: "http://localhost/C237/C273_L09/getCountryDetails.php",
-            data: "id=" + idCountry,
             cache: false,
             dataType: "JSON",
+            data: "id=" + idCountry,
             success: function (response) {
-                console.log("a");
-                var message = "<tr><th>Population</th><th>Obese</th></tr>";
-                for (i = 0; i < response.length; i++) {
-                    message += "<td>" + response[i].population + "</td>" + "<td>" + response[i].obese + "</td>";
-                }
+                //To display the table heading
+                var message = "<thead><tr><th>Population</th><th>Obese</th></tr></thead>";
+                
+                //This part is to display the data in the table body
+                message += "<tbody>";
+                message += "<td>" + response[0].population + "</td>" +
+                        "<td>" + response[0].obese + "</td>";
+                message += "</tbody>";
                 $("#obeseTable").html(message);
-
-
             },
             error: function (obj, textStatus, errorThrown) {
                 console.log("Error " + textStatus + ": " + errorThrown);
