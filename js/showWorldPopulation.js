@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    
+    console.log("test");
 
     // create empty array to store data 
     var data = [];
@@ -7,7 +9,7 @@ $(document).ready(function () {
     $.ajax({
         type: "GET",
         //url: "http://localhost/c237/C273_L09/getStatistic.php",
-        url: "https://19020303.azurewebsites.net/getStatistic.php",
+        url: "getStatistic.php",
         cache: false,
         dataType: "JSON",
         //data: "id=" + idCountry,
